@@ -3,9 +3,8 @@ package state
 import . "luago/api"
 
 type luaValue interface{}
-type luaType int
 
-func typeOf(val luaValue) luaType {
+func typeOf(val luaValue) LuaType {
 	switch val.(type) {
 	case nil:
 		return LUA_TNIL

@@ -65,3 +65,12 @@ func (stack *luaStack) set(idx int, val luaValue) {
 	}
 	panic("invalid index")
 }
+
+func (stack *luaStack) Reverse (from , to int) {
+	slots := stack.slots;
+	for from < to {
+		slots[from], slots[to] = slots[to], slots[from];
+		from++;
+		to--;
+	}
+}
