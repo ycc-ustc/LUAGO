@@ -20,3 +20,14 @@ func typeOf(val luaValue) LuaType {
 		panic("todo")
 	}
 }
+
+func ConvertToBoolean(val luaValue) bool {
+	switch b := val.(type) {
+	case nil:
+		return false
+	case bool:
+		return b
+	default:
+		return true
+	}
+}
