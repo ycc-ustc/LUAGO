@@ -6,6 +6,10 @@ import (
 	"luago/vm"
 )
 
+// chunk参数给出要加载的字节数组，chunkName指定chunk的名字，mode指定加载模式，'b': 第一个参数必须是文本chunk数据，否则会
+// 出错， 't': 第一个参数必须是文本chunk数据，'bt': 第一个参数可以是二进制或者文本chunk数据
+//
+// 如果加载失败会再栈顶留下一个错误信息，返回一个状态码0表示成功 先忽略状态码 直接返回0
 func (state *luaState) Load(chunk []byte, chunkName, mode string) int {
 	proto := binchunk.Undump(chunk)
 	c := newLuaClosure(proto)
