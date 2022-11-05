@@ -1,13 +1,10 @@
 package main
 
-import (
-	"fmt"
-	"io/ioutil"
-	"os"
-
-	. "luago/api"
-	"luago/state"
-)
+import "fmt"
+import "io/ioutil"
+import "os"
+import . "luago/api"
+import "luago/state"
 
 func main() {
 	if len(os.Args) > 1 {
